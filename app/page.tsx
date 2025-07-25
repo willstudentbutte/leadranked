@@ -18,9 +18,128 @@ import {
   MapPin,
   ChevronRight,
   Zap,
+  ChevronLeft,
+  Clock,
+  Briefcase,
+  Quote,
+  ExternalLink,
+  CheckCircle,
 } from "lucide-react"
 
 const businesses = ["Local HVAC Company", "San Jose Restaurant", "Tech Startup", "Your Business"]
+
+// Helper function to generate realistic avatar URLs
+const getImageUrl = (name: string, gender?: string) => {
+  // Using UI Avatars as fallback with realistic styling
+  const cleanName = encodeURIComponent(name)
+  return `https://ui-avatars.com/api/?name=${cleanName}&size=128&background=random&color=fff&bold=true&format=png`
+}
+
+// Clean Modern SaaS Testimonials Data
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah Johnson",
+    title: "CEO, TechFlow Solutions",
+    quote: "Lead Ranked helped us go from invisible to unmissable on Google. We're now the top tech company in San Jose!",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    id: 2,
+    name: "Mike Herrera",
+    title: "Owner, Chicago Roof Co.",
+    quote: "Our phone hasn't stopped ringing since working with Lead Ranked. We went from struggling to fully booked!",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    id: 3,
+    name: "Jennifer Chen",
+    title: "Bay Area Dental",
+    quote: "We're booming with new patients! Lead Ranked made us the go-to dental practice in our area.",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+  },
+  {
+    id: 4,
+    name: "David Park",
+    title: "Park's Auto Repair",
+    quote: "From struggling to get noticed to being the #1 auto shop in town. These guys are absolute wizards!",
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+  },
+  {
+    id: 5,
+    name: "Lisa Thompson",
+    title: "Thompson Law Firm",
+    quote: "The quality of clients we're attracting now is incredible. Our practice has completely transformed!",
+    avatar: "https://randomuser.me/api/portraits/women/25.jpg",
+  },
+  {
+    id: 6,
+    name: "Carlos Martinez",
+    title: "Martinez Restaurant",
+    quote: "We're booked solid every weekend! Lead Ranked made us the most talked-about restaurant in town.",
+    avatar: "https://randomuser.me/api/portraits/men/18.jpg",
+  },
+]
+
+// Clean Modern SaaS Testimonials Component
+function TestimonialCarousel() {
+  return (
+    <div className="relative">
+      {/* Testimonials Grid - Equal Height Cards */}
+      <div className="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={testimonial.id}
+            className="group opacity-0 animate-fade-in-up"
+            style={{
+              animationDelay: `${index * 150}ms`
+            }}
+          >
+            {/* Consistent Card Design */}
+            <div className="h-full bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100/50 flex flex-col">
+
+              {/* Star Rating - Top */}
+              <div className="flex items-center justify-center gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+
+              {/* Quote Text - Center Aligned */}
+              <div className="flex-1 flex items-center mb-8">
+                <blockquote className="text-gray-700 text-lg leading-relaxed text-center relative">
+                  <span className="text-4xl text-blue-200 absolute -top-2 -left-2 font-serif">"</span>
+                  <span className="relative z-10">{testimonial.quote}</span>
+                  <span className="text-4xl text-blue-200 absolute -bottom-6 -right-2 font-serif">"</span>
+                </blockquote>
+              </div>
+
+              {/* Profile - Bottom */}
+              <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+                <div className="w-14 h-14 rounded-full overflow-hidden shadow-md border-2 border-white flex-shrink-0">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to UI Avatars if randomuser.me fails
+                      const target = e.target as HTMLImageElement;
+                      target.src = getImageUrl(testimonial.name);
+                    }}
+                  />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-900 text-base">{testimonial.name}</div>
+                  <div className="text-gray-600 text-sm">{testimonial.title}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function LeadRankedLanding() {
   const [currentBusiness, setCurrentBusiness] = useState(0)
@@ -180,11 +299,10 @@ export default function LeadRankedLanding() {
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`w-4 h-4 ${
-                                i < Math.floor(Number.parseFloat(competitor.rating))
-                                  ? "fill-yellow-400 text-yellow-400"
-                                  : "fill-gray-200 text-gray-200"
-                              }`}
+                              className={`w-4 h-4 ${i < Math.floor(Number.parseFloat(competitor.rating))
+                                ? "fill-yellow-400 text-yellow-400"
+                                : "fill-gray-200 text-gray-200"
+                                }`}
                             />
                           ))}
                         </div>
@@ -665,11 +783,10 @@ export default function LeadRankedLanding() {
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className={`w-4 h-4 ${
-                              i < Math.floor(Number.parseFloat(competitor.rating))
-                                ? "fill-yellow-400 text-yellow-400"
-                                : "fill-gray-200 text-gray-200"
-                            }`}
+                            className={`w-4 h-4 ${i < Math.floor(Number.parseFloat(competitor.rating))
+                              ? "fill-yellow-400 text-yellow-400"
+                              : "fill-gray-200 text-gray-200"
+                              }`}
                           />
                         ))}
                       </div>
@@ -804,64 +921,29 @@ export default function LeadRankedLanding() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Testimonials Section - Clean Modern SaaS Style */}
+      <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/40 relative overflow-hidden">
+        {/* Radial Background Effects - Similar to Hero */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-400/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-100 mb-4">Client Testimonials</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 mb-6">
+              Trusted by 500+ Businesses
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Real results from real businesses. See how we've transformed their digital presence and helped them dominate Google search results.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Johnson",
-                role: "CEO, TechFlow Solutions",
-                quote:
-                  "Lead Ranked transformed our online presence—our business traffic and revenue skyrocketed! We went from page 3 to #1 in just 2 months.",
-                rating: 5,
-              },
-              {
-                name: "Mike Rodriguez",
-                role: "Owner, Rodriguez HVAC",
-                quote:
-                  "The ROI has been incredible. We're getting 5x more qualified leads than before working with Lead Ranked. Highly recommend!",
-                rating: 5,
-              },
-              {
-                name: "Jennifer Chen",
-                role: "Marketing Director, Bay Area Dental",
-                quote:
-                  "Professional, results-driven, and transparent. Lead Ranked delivered exactly what they promised and more. Our practice is booming!",
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <blockquote className="text-gray-700 mb-4 italic">"{testimonial.quote}"</blockquote>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center">
-                      <span className="text-blue-600 font-semibold text-lg">
-                        {testimonial.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <TestimonialCarousel />
         </div>
       </section>
 
