@@ -35,7 +35,7 @@ const getImageUrl = (name: string, gender?: string) => {
   return `https://ui-avatars.com/api/?name=${cleanName}&size=128&background=random&color=fff&bold=true&format=png`
 }
 
-// Clean Modern SaaS Testimonials Data
+// Clean Modern SaaS Testimonials Data with Subtle Colors
 const testimonials = [
   {
     id: 1,
@@ -43,6 +43,7 @@ const testimonials = [
     title: "CEO, TechFlow Solutions",
     quote: "Lead Ranked helped us go from invisible to unmissable on Google. We're now the top tech company in San Jose!",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    bgColor: "bg-blue-50/50",
   },
   {
     id: 2,
@@ -50,6 +51,7 @@ const testimonials = [
     title: "Owner, Chicago Roof Co.",
     quote: "Our phone hasn't stopped ringing since working with Lead Ranked. We went from struggling to fully booked!",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    bgColor: "bg-green-50/50",
   },
   {
     id: 3,
@@ -57,6 +59,7 @@ const testimonials = [
     title: "Bay Area Dental",
     quote: "We're booming with new patients! Lead Ranked made us the go-to dental practice in our area.",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    bgColor: "bg-purple-50/50",
   },
   {
     id: 4,
@@ -64,6 +67,7 @@ const testimonials = [
     title: "Park's Auto Repair",
     quote: "From struggling to get noticed to being the #1 auto shop in town. These guys are absolute wizards!",
     avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    bgColor: "bg-orange-50/50",
   },
   {
     id: 5,
@@ -71,6 +75,7 @@ const testimonials = [
     title: "Thompson Law Firm",
     quote: "The quality of clients we're attracting now is incredible. Our practice has completely transformed!",
     avatar: "https://randomuser.me/api/portraits/women/25.jpg",
+    bgColor: "bg-pink-50/50",
   },
   {
     id: 6,
@@ -78,6 +83,7 @@ const testimonials = [
     title: "Martinez Restaurant",
     quote: "We're booked solid every weekend! Lead Ranked made us the most talked-about restaurant in town.",
     avatar: "https://randomuser.me/api/portraits/men/18.jpg",
+    bgColor: "bg-teal-50/50",
   },
 ]
 
@@ -95,8 +101,8 @@ function TestimonialCarousel() {
               animationDelay: `${index * 150}ms`
             }}
           >
-            {/* Consistent Card Design */}
-            <div className="h-full bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100/50 flex flex-col">
+            {/* Consistent Card Design with Subtle Color */}
+            <div className={`h-full ${testimonial.bgColor} backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-white/50 flex flex-col`}>
 
               {/* Star Rating - Top */}
               <div className="flex items-center justify-center gap-1 mb-6">
@@ -384,13 +390,16 @@ export default function LeadRankedLanding() {
             {/* Left Side - Pitch Content */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">Website Development</Badge>
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                  Launch a High-Performance Website in <span className="text-blue-600">Under 7 Days</span>
+                <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-full border border-white/50 shadow-lg">
+                  <span className="text-2xl">🚀</span>
+                  <span className="text-blue-800 font-bold">Lightning-Fast Websites</span>
+                </div>
+                <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                  Your Dream Website,<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">Ready in 7 Days</span>
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Get a lightning-fast, SEO-optimized website that ranks on Google from day one. Built specifically for
-                  local businesses to dominate search results.
+                  Get a lightning-fast, SEO-optimized website that ranks on Google from day one. Built specifically for local businesses who want to dominate their competition!
                 </p>
               </div>
 
@@ -570,11 +579,16 @@ export default function LeadRankedLanding() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 mb-4">Our Services</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete Digital Marketing Solutions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From blazing-fast websites to premium link building, we provide everything you need to dominate your
-              market.
+            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-full border border-white/50 shadow-lg mb-6">
+              <span className="text-2xl">⚡️</span>
+              <span className="text-indigo-800 font-bold">Everything You Need</span>
+            </div>
+            <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
+              Complete Digital Domination,<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">All Under One Roof</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              From blazing-fast websites to premium link building—we've got everything you need to crush your competition and dominate your market!
             </p>
           </div>
 
@@ -708,10 +722,16 @@ export default function LeadRankedLanding() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 mb-4">Success Spotlight</Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">From Page 3 to #1 in 60 Days</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              See how we transformed Chicago Roofing Pros from invisible to unstoppable on Google.
+            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-full border border-white/50 shadow-lg mb-6">
+              <span className="text-2xl">🏆</span>
+              <span className="text-green-800 font-bold">Success Spotlight</span>
+            </div>
+            <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
+              From Invisible to Unstoppable,<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Page 3 to #1 in 60 Days!</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+              Watch how we transformed Chicago Roofing Pros from Google's graveyard to the top spot—and how we can do the same for you!
             </p>
           </div>
 
@@ -923,23 +943,31 @@ export default function LeadRankedLanding() {
 
       {/* Testimonials Section - Clean Modern SaaS Style */}
       <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/40 relative overflow-hidden">
-        {/* Radial Background Effects - Similar to Hero */}
+        {/* Radial Background Effects with Bouncing Emojis */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-400/5 rounded-full blur-3xl"></div>
+
+          {/* Floating bouncing emojis */}
+          <div className="absolute top-32 left-1/4 text-4xl opacity-20 animate-bounce">💬</div>
+          <div className="absolute top-48 right-1/4 text-3xl opacity-20 animate-bounce delay-1000">⭐️</div>
+          <div className="absolute bottom-32 left-1/3 text-3xl opacity-20 animate-bounce delay-500">📈</div>
+          <div className="absolute bottom-48 right-1/3 text-4xl opacity-20 animate-bounce delay-1500">🚀</div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100 mb-6">
-              Trusted by 500+ Businesses
-            </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              What Our Clients Say
+            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-full border border-white/50 shadow-lg mb-6">
+              <span className="text-2xl">🌈</span>
+              <span className="text-purple-800 font-bold">Loved by Local Businesses</span>
+            </div>
+            <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
+              Real People, Real Results,<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Real Happy</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Real results from real businesses. See how we've transformed their digital presence and helped them dominate Google search results.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Don't just take our word for it—hear from the amazing businesses we've helped dominate Google!
             </p>
           </div>
 
