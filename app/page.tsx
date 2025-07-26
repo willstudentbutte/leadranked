@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   Search,
   TrendingUp,
@@ -18,19 +18,11 @@ import {
   MapPin,
   ChevronRight,
   Zap,
-  ChevronLeft,
-  Clock,
-  Briefcase,
-  Quote,
-  ExternalLink,
-  CheckCircle,
   Rocket,
 } from "lucide-react"
 
-const businesses = ["Local HVAC Company", "San Jose Restaurant", "Tech Startup", "Your Business"]
-
 // Helper function to generate realistic avatar URLs
-const getImageUrl = (name: string, gender?: string) => {
+const getImageUrl = (name: string) => {
   // Using UI Avatars as fallback with realistic styling
   const cleanName = encodeURIComponent(name)
   return `https://ui-avatars.com/api/?name=${cleanName}&size=128&background=random&color=fff&bold=true&format=png`
@@ -42,7 +34,7 @@ const testimonials = [
     id: 1,
     name: "Sarah Johnson",
     title: "CEO, TechFlow Solutions",
-    quote: "Lead Ranked helped us go from invisible to unmissable on Google. We're now the top tech company in San Jose!",
+    quote: "Lead Ranked helped us go from invisible to unmissable on Google. We&apos;re now the top tech company in San Jose!",
     avatar: "https://randomuser.me/api/portraits/women/12.jpg",
     bgColor: "bg-blue-50/50",
   },
@@ -50,7 +42,7 @@ const testimonials = [
     id: 2,
     name: "Mike Herrera",
     title: "Owner, Chicago Roof Co.",
-    quote: "Our phone hasn't stopped ringing since working with Lead Ranked. We went from struggling to fully booked!",
+    quote: "Our phone hasn&apos;t stopped ringing since working with Lead Ranked. We went from struggling to fully booked!",
     avatar: "https://randomuser.me/api/portraits/men/15.jpg",
     bgColor: "bg-green-50/50",
   },
@@ -58,14 +50,14 @@ const testimonials = [
     id: 3,
     name: "Jennifer Chen",
     title: "Bay Area Dental",
-    quote: "We're booming with new patients! Lead Ranked made us the go-to dental practice in our area.",
+    quote: "We&apos;re booming with new patients! Lead Ranked made us the go-to dental practice in our area.",
     avatar: "https://randomuser.me/api/portraits/women/28.jpg",
     bgColor: "bg-purple-50/50",
   },
   {
     id: 4,
     name: "David Park",
-    title: "Park's Auto Repair",
+    title: "Park&apos;s Auto Repair",
     quote: "From struggling to get noticed to being the #1 auto shop in town. These guys are absolute wizards!",
     avatar: "https://randomuser.me/api/portraits/men/22.jpg",
     bgColor: "bg-orange-50/50",
@@ -74,7 +66,7 @@ const testimonials = [
     id: 5,
     name: "Lisa Thompson",
     title: "Thompson Law Firm",
-    quote: "The quality of clients we're attracting now is incredible. Our practice has completely transformed!",
+    quote: "The quality of clients we&apos;re attracting now is incredible. Our practice has completely transformed!",
     avatar: "https://randomuser.me/api/portraits/women/35.jpg",
     bgColor: "bg-pink-50/50",
   },
@@ -82,7 +74,7 @@ const testimonials = [
     id: 6,
     name: "Carlos Martinez",
     title: "Martinez Restaurant",
-    quote: "We're booked solid every weekend! Lead Ranked made us the most talked-about restaurant in town.",
+    quote: "We&apos;re booked solid every weekend! Lead Ranked made us the most talked-about restaurant in town.",
     avatar: "https://randomuser.me/api/portraits/men/41.jpg",
     bgColor: "bg-teal-50/50",
   },
@@ -115,18 +107,20 @@ function TestimonialCarousel() {
               {/* Quote Text - Center Aligned */}
               <div className="flex-1 flex items-center mb-8">
                 <blockquote className="text-gray-700 text-lg leading-relaxed text-center relative">
-                  <span className="text-4xl text-blue-200 absolute -top-2 -left-2 font-serif">"</span>
+                  <span className="text-4xl text-blue-200 absolute -top-2 -left-2 font-serif">&quot;</span>
                   <span className="relative z-10">{testimonial.quote}</span>
-                  <span className="text-4xl text-blue-200 absolute -bottom-6 -right-2 font-serif">"</span>
+                  <span className="text-4xl text-blue-200 absolute -bottom-6 -right-2 font-serif">&quot;</span>
                 </blockquote>
               </div>
 
               {/* Profile - Bottom */}
               <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
                 <div className="w-14 h-14 rounded-full overflow-hidden shadow-md border-2 border-white flex-shrink-0">
-                  <img
+                  <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
+                    width={56}
+                    height={56}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       // Fallback to UI Avatars if randomuser.me fails
@@ -149,20 +143,6 @@ function TestimonialCarousel() {
 }
 
 export default function LeadRankedLanding() {
-  const [currentBusiness, setCurrentBusiness] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true)
-      setTimeout(() => {
-        setCurrentBusiness((prev) => (prev + 1) % businesses.length)
-        setIsAnimating(false)
-      }, 500)
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   return (
     <div className="min-h-screen bg-white">
@@ -219,7 +199,7 @@ export default function LeadRankedLanding() {
               <div className="space-y-6 lg:space-y-8">
                 <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-white/30 shadow-xl">
                   <span className="text-2xl lg:text-3xl">🏆</span>
-                  <span className="text-white font-bold text-base lg:text-lg font-sans">Silicon Valley's #1 SEO Authority</span>
+                  <span className="text-white font-bold text-base lg:text-lg font-sans">Silicon Valley&apos;s #1 SEO Authority</span>
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.2] lg:leading-[1.3] tracking-tight pb-2">
@@ -261,7 +241,7 @@ export default function LeadRankedLanding() {
                         "https://randomuser.me/api/portraits/men/22.jpg"
                       ].map((avatar, index) => (
                         <div key={index} className="w-10 lg:w-12 h-10 lg:h-12 rounded-full border-2 lg:border-3 border-white shadow-lg overflow-hidden hover:scale-110 transition-transform duration-300">
-                          <img src={avatar} alt="Client" className="w-full h-full object-cover" />
+                          <Image src={avatar} alt="Client" width={48} height={48} className="w-full h-full object-cover" />
                         </div>
                       ))}
                     </div>
@@ -272,7 +252,7 @@ export default function LeadRankedLanding() {
                     </div>
                   </div>
                   <p className="text-white text-base lg:text-lg font-medium font-sans">
-                    ⭐ <span className="font-bold">"Went from page 3 to #1 in 30 days"</span> - Join 500+ businesses dominating Google
+                    ⭐ <span className="font-bold">&quot;Went from page 3 to #1 in 30 days&quot;</span> - Join 500+ businesses dominating Google
                   </p>
                 </div>
               </div>
@@ -522,7 +502,7 @@ export default function LeadRankedLanding() {
                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12"></div>
                     
                     <div className="relative text-center space-y-5">
-                      <h1 className="text-2xl font-bold leading-tight tracking-tight">San Jose's #1 Plumbing Service</h1>
+                      <h1 className="text-2xl font-bold leading-tight tracking-tight">San Jose&apos;s #1 Plumbing Service</h1>
                       <p className="text-blue-100 text-base font-medium">24/7 Emergency Repairs • Licensed & Insured</p>
                       <div className="flex items-center justify-center gap-2">
                         {[...Array(5)].map((_, i) => (
@@ -579,9 +559,9 @@ export default function LeadRankedLanding() {
                         </div>
                       </div>
                       <blockquote className="text-gray-800 font-medium leading-relaxed relative">
-                        <span className="text-2xl text-green-300 absolute -top-2 -left-1">"</span>
+                        <span className="text-2xl text-green-300 absolute -top-2 -left-1">&quot;</span>
                         <span className="relative">Fixed my emergency leak in 30 minutes! Professional, affordable, and they even cleaned up after. Highly recommend!</span>
-                        <span className="text-2xl text-green-300 absolute -bottom-4 -right-1">"</span>
+                        <span className="text-2xl text-green-300 absolute -bottom-4 -right-1">&quot;</span>
                       </blockquote>
                     </div>
                   </div>
@@ -659,7 +639,7 @@ export default function LeadRankedLanding() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">All Under One Roof</span>
             </h2>
             <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              From blazing-fast websites to premium link building—we've got everything you need to crush your competition and dominate your market!
+              From blazing-fast websites to premium link building—we&apos;ve got everything you need to crush your competition and dominate your market!
             </p>
           </div>
 
@@ -802,7 +782,7 @@ export default function LeadRankedLanding() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Page 3 to #1 in 60 Days!</span>
             </h2>
             <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Watch how we transformed Chicago Roofing Pros from Google's graveyard to the top spot—and how we can do the same for you!
+              Watch how we transformed Chicago Roofing Pros from Google&apos;s graveyard to the top spot—and how we can do the same for you!
             </p>
           </div>
 
@@ -999,8 +979,8 @@ export default function LeadRankedLanding() {
                 </div>
               </div>
               <blockquote className="text-xl text-gray-700 italic mb-4 leading-relaxed">
-                "We were buried on page 3 before Lead Ranked stepped in. Now we're not just #1 on Google Maps – we're
-                booked solid for months! Our phone hasn't stopped ringing."
+                &quot;We were buried on page 3 before Lead Ranked stepped in. Now we&apos;re not just #1 on Google Maps – we&apos;re
+                booked solid for months! Our phone hasn&apos;t stopped ringing.&quot;
               </blockquote>
               <div className="flex items-center justify-center gap-1">
                 {[...Array(5)].map((_, i) => (
@@ -1038,7 +1018,7 @@ export default function LeadRankedLanding() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Real Happy</span>
             </h2>
             <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Don't just take our word for it—hear from the amazing businesses we've helped dominate Google!
+              Don&apos;t just take our word for it—hear from the amazing businesses we&apos;ve helped dominate Google!
             </p>
           </div>
 
@@ -1093,7 +1073,7 @@ export default function LeadRankedLanding() {
             <div className="col-span-2">
               <div className="text-2xl font-bold text-blue-400 mb-4">Lead Ranked</div>
               <p className="text-gray-400 mb-4">
-                San Jose's premier digital marketing agency specializing in getting businesses ranked #1 on Google.
+                San Jose&apos;s premier digital marketing agency specializing in getting businesses ranked #1 on Google.
               </p>
               <div className="flex space-x-4">
                 {/* Social media placeholder icons */}
