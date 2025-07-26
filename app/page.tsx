@@ -42,7 +42,7 @@ const testimonials = [
     name: "Sarah Johnson",
     title: "CEO, TechFlow Solutions",
     quote: "Lead Ranked helped us go from invisible to unmissable on Google. We're now the top tech company in San Jose!",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    avatar: "https://randomuser.me/api/portraits/women/12.jpg",
     bgColor: "bg-blue-50/50",
   },
   {
@@ -50,7 +50,7 @@ const testimonials = [
     name: "Mike Herrera",
     title: "Owner, Chicago Roof Co.",
     quote: "Our phone hasn't stopped ringing since working with Lead Ranked. We went from struggling to fully booked!",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    avatar: "https://randomuser.me/api/portraits/men/15.jpg",
     bgColor: "bg-green-50/50",
   },
   {
@@ -58,7 +58,7 @@ const testimonials = [
     name: "Jennifer Chen",
     title: "Bay Area Dental",
     quote: "We're booming with new patients! Lead Ranked made us the go-to dental practice in our area.",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    avatar: "https://randomuser.me/api/portraits/women/28.jpg",
     bgColor: "bg-purple-50/50",
   },
   {
@@ -66,7 +66,7 @@ const testimonials = [
     name: "David Park",
     title: "Park's Auto Repair",
     quote: "From struggling to get noticed to being the #1 auto shop in town. These guys are absolute wizards!",
-    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
     bgColor: "bg-orange-50/50",
   },
   {
@@ -74,7 +74,7 @@ const testimonials = [
     name: "Lisa Thompson",
     title: "Thompson Law Firm",
     quote: "The quality of clients we're attracting now is incredible. Our practice has completely transformed!",
-    avatar: "https://randomuser.me/api/portraits/women/25.jpg",
+    avatar: "https://randomuser.me/api/portraits/women/35.jpg",
     bgColor: "bg-pink-50/50",
   },
   {
@@ -82,7 +82,7 @@ const testimonials = [
     name: "Carlos Martinez",
     title: "Martinez Restaurant",
     quote: "We're booked solid every weekend! Lead Ranked made us the most talked-about restaurant in town.",
-    avatar: "https://randomuser.me/api/portraits/men/18.jpg",
+    avatar: "https://randomuser.me/api/portraits/men/41.jpg",
     bgColor: "bg-teal-50/50",
   },
 ]
@@ -194,113 +194,178 @@ export default function LeadRankedLanding() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Premium Hero Section */}
       <section
         id="home"
-        className="pt-24 pb-16 bg-gradient-to-br from-indigo-600 via-blue-600 to-teal-600 relative overflow-hidden"
+        className="pt-32 pb-24 bg-gradient-to-br from-indigo-600 via-blue-600 to-teal-600 relative overflow-hidden min-h-screen flex items-center"
       >
-        {/* Background Effects */}
+        {/* Enhanced Background Effects with Google Colors */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400/10 rounded-full blur-3xl"></div>
+
+          {/* Floating Google-colored dots */}
+          <div className="absolute top-32 left-1/4 w-4 h-4 bg-red-400/30 rounded-full animate-bounce"></div>
+          <div className="absolute top-48 right-1/4 w-3 h-3 bg-yellow-400/30 rounded-full animate-bounce delay-500"></div>
+          <div className="absolute bottom-32 left-1/3 w-5 h-5 bg-green-400/30 rounded-full animate-bounce delay-1000"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column */}
-            <div className="space-y-8 text-white">
-              <div className="space-y-6">
-                <Badge className="bg-white/20 text-white hover:bg-white/20 backdrop-blur-sm border-white/30">
-                  San Jose's #1 Digital Marketing Experts
-                </Badge>
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                  Get Found on Google—
-                  <span className="text-teal-300">Fast</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left Column - Enhanced */}
+            <div className="space-y-8 lg:space-y-10 text-white">
+              <div className="space-y-6 lg:space-y-8">
+                <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-white/30 shadow-xl">
+                  <span className="text-2xl lg:text-3xl">🏆</span>
+                  <span className="text-white font-bold text-base lg:text-lg font-sans">Silicon Valley's #1 SEO Authority</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.2] lg:leading-[1.3] tracking-tight pb-2">
+                  <span className="block mb-2 lg:mb-4">Rank #1 on Google —</span>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-teal-300 to-pink-300 pb-1">
+                    The Right Way
+                  </span>
                 </h1>
-                <p className="text-xl text-blue-100 leading-relaxed">
-                  Crush local SEO, grow your traffic, and leave your competitors behind.
+
+                <p className="text-base sm:text-lg lg:text-2xl text-blue-100 leading-relaxed font-medium max-w-xl font-sans">
+                  Rise to the top of search results with SEO that actually works. Custom websites and local SEO that put you at #1—fast.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                  Start Your Free SEO Audit
-                  <ChevronRight className="ml-2 h-5 w-5" />
+
+              {/* Premium CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 lg:gap-6">
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-bold font-sans shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+                  🚀 Start Free SEO Audit
+                  <ChevronRight className="ml-2 lg:ml-3 h-5 lg:h-6 w-5 lg:w-6" />
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg bg-transparent backdrop-blur-sm"
+                  className="border-2 border-white/40 text-white hover:bg-white/15 px-8 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-bold font-sans bg-transparent backdrop-blur-sm shadow-xl"
                 >
-                  View Case Studies
+                  📊 View Case Studies
                 </Button>
+              </div>
+
+              {/* Mini Testimonials Under CTAs with Frosted Glass */}
+              <div className="pt-6 lg:pt-8">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 lg:p-6 border border-white/20 shadow-xl">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
+                    <div className="flex -space-x-2 lg:-space-x-3">
+                      {[
+                        "https://randomuser.me/api/portraits/women/12.jpg",
+                        "https://randomuser.me/api/portraits/men/15.jpg",
+                        "https://randomuser.me/api/portraits/women/28.jpg",
+                        "https://randomuser.me/api/portraits/men/22.jpg"
+                      ].map((avatar, index) => (
+                        <div key={index} className="w-10 lg:w-12 h-10 lg:h-12 rounded-full border-2 lg:border-3 border-white shadow-lg overflow-hidden hover:scale-110 transition-transform duration-300">
+                          <img src={avatar} alt="Client" className="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-1 lg:gap-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 lg:w-5 h-4 lg:h-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-white text-base lg:text-lg font-medium font-sans">
+                    ⭐ <span className="font-bold">"Went from page 3 to #1 in 30 days"</span> - Join 500+ businesses dominating Google
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Right Column - Google SERP Mockup */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
-                {/* Search Bar */}
-                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-full mb-6 border">
-                  <Search className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-700 flex-1">Plumber in San Jose</span>
-                  <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <Search className="w-4 h-4 text-white" />
+            {/* Right Column - Premium Google SERP Mockup */}
+            <div className="relative mt-8 lg:mt-0 w-full max-w-full">
+              {/* Main SERP Container */}
+              <div className="bg-white rounded-2xl lg:rounded-3xl shadow-2xl p-4 lg:p-8 border border-gray-100 backdrop-blur-sm w-full max-w-full overflow-hidden">
+                {/* Realistic Google Search Bar */}
+                <div className="flex items-center gap-2 lg:gap-4 p-3 lg:p-5 bg-gray-50 rounded-full mb-6 lg:mb-8 border-2 border-gray-200 shadow-inner">
+                  <div className="flex items-center gap-2 lg:gap-3 min-w-0 flex-1">
+                    <div className="w-6 lg:w-8 h-6 lg:h-8 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Search className="w-3 lg:w-4 h-3 lg:h-4 text-white" />
+                    </div>
+                    <span className="text-gray-800 font-medium text-sm lg:text-lg truncate">roofing company in San Jose</span>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <div className="w-6 lg:w-8 h-6 lg:h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+                      <Search className="w-3 lg:w-4 h-3 lg:h-4 text-white" />
+                    </div>
                   </div>
                 </div>
 
                 {/* Search Results */}
-                <div className="space-y-4">
-                  {/* #1 Result - Highlighted */}
-                  <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-teal-50 border-2 border-blue-200 shadow-md">
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">#1</span>
-                          <h3 className="font-semibold text-blue-900">Tech Startup</h3>
+                <div className="space-y-3 lg:space-y-5">
+                  {/* #1 Result - Your Client (Highlighted & Animated) */}
+                  <div className="relative p-4 lg:p-6 rounded-xl lg:rounded-2xl bg-gradient-to-r from-blue-50 via-green-50 to-teal-50 border-2 lg:border-3 border-blue-300 shadow-xl hover:shadow-2xl transition-all duration-500 group">
+                    {/* Ranking Badge with Animation */}
+                    <div className="absolute -top-2 lg:-top-3 -left-2 lg:-left-3 bg-gradient-to-r from-green-500 to-blue-600 text-white text-xs lg:text-sm font-black px-2 lg:px-4 py-1 lg:py-2 rounded-full shadow-lg animate-pulse">
+                      🏆 #1
+                    </div>
+
+                    {/* "You" Indicator */}
+                    <div className="absolute -top-2 lg:-top-3 -right-2 lg:-right-3 bg-yellow-400 text-black text-xs font-bold px-2 lg:px-3 py-1 rounded-full shadow-lg">
+                      YOU ⬆️
+                    </div>
+
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-3 mb-2">
+                          <h3 className="font-bold text-blue-900 text-lg lg:text-xl">San Jose Roofing Pros</h3>
+                          <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-full w-fit">
+                            <TrendingUp className="w-3 lg:w-4 h-3 lg:h-4 text-green-600" />
+                            <span className="text-xs font-bold text-green-700">OPTIMIZED</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="flex items-center">
+
+                        <div className="flex items-center gap-2 lg:gap-3 mb-3">
+                          <div className="flex items-center gap-1">
                             {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                              <Star key={i} className="w-4 lg:w-5 h-4 lg:h-5 fill-yellow-400 text-yellow-400" />
                             ))}
                           </div>
-                          <span className="text-sm font-medium">4.9 (214 reviews)</span>
+                          <span className="text-sm lg:text-base font-bold text-gray-800">4.9 (347 reviews)</span>
                         </div>
-                        <div className="flex items-center gap-4 text-sm text-gray-600">
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            <span>San Jose, CA</span>
+
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-6 text-sm lg:text-base text-gray-700 mb-3">
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-4 lg:w-5 h-4 lg:h-5 text-red-500" />
+                            <span className="font-medium">San Jose, CA</span>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <Phone className="w-4 h-4" />
-                            <span>(408) 555-1234</span>
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-4 lg:w-5 h-4 lg:h-5 text-green-600" />
+                            <span className="font-medium">(408) 555-ROOF</span>
                           </div>
                         </div>
-                        <div className="text-sm text-blue-600 mt-1">techstartup.com</div>
+
+                        <div className="text-blue-600 font-semibold text-sm lg:text-base mb-2">sanjoseroofingpros.com</div>
+                        <div className="text-gray-600 text-xs lg:text-sm">Professional roofing services • Licensed & Insured • 24/7 Emergency Repairs</div>
                       </div>
-                      {/* Mini Map Widget */}
-                      <div className="w-20 h-16 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg border border-gray-200 flex items-center justify-center ml-4">
+
+                      {/* Enhanced Mini Map */}
+                      <div className="w-16 lg:w-24 h-14 lg:h-20 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg lg:rounded-xl border-2 border-gray-200 flex items-center justify-center lg:ml-6 shadow-lg flex-shrink-0">
                         <div className="relative">
-                          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                          <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-600 rounded-full animate-ping"></div>
+                          <div className="w-3 lg:w-4 h-3 lg:h-4 bg-red-500 rounded-full shadow-lg"></div>
+                          <div className="absolute -top-1 -left-1 w-2 lg:w-3 h-2 lg:h-3 bg-red-600 rounded-full animate-ping"></div>
+                          <div className="absolute top-3 lg:top-5 left-1 lg:left-2 text-xs font-bold text-gray-600">📍</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Competitors */}
+                  {/* Competitors - Faded */}
                   {[
-                    { name: "Competitor 1", rating: "4.2", reviews: "89" },
-                    { name: "Competitor 2", rating: "3.8", reviews: "156" },
-                    { name: "Competitor 3", rating: "4.0", reviews: "67" },
+                    { name: "Budget Roofing Co", rating: "4.1", reviews: "89", position: 2 },
+                    { name: "Quick Fix Roofing", rating: "3.8", reviews: "156", position: 3 },
                   ].map((competitor, index) => (
-                    <div key={index} className="p-4 rounded-lg bg-gray-50 border border-gray-200">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="bg-gray-400 text-white text-xs font-bold px-2 py-1 rounded">#{index + 2}</span>
-                        <h3 className="font-medium text-gray-700">{competitor.name}</h3>
+                    <div key={index} className="p-3 lg:p-4 rounded-lg lg:rounded-xl bg-gray-50 border border-gray-200 opacity-60">
+                      <div className="flex items-center gap-2 lg:gap-3 mb-2">
+                        <span className="bg-gray-400 text-white text-xs font-bold px-2 lg:px-3 py-1 rounded-full">#{competitor.position}</span>
+                        <h3 className="font-medium text-gray-700 text-base lg:text-lg">{competitor.name}</h3>
                       </div>
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-2 lg:gap-3 mb-2">
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
                             <Star
@@ -316,64 +381,28 @@ export default function LeadRankedLanding() {
                           {competitor.rating} ({competitor.reviews} reviews)
                         </span>
                       </div>
-                      <div className="text-sm text-gray-500">Standard listing</div>
+                      <div className="text-sm text-gray-500">Standard listing • Limited visibility</div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 bg-teal-500 text-white p-3 rounded-full shadow-lg animate-bounce">
-                <Target className="w-6 h-6" />
+              {/* Enhanced Floating Elements - Hidden on mobile to prevent overflow */}
+              <div className="hidden lg:block absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-teal-500 text-white p-4 rounded-full shadow-2xl animate-bounce">
+                <Target className="w-7 h-7" />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white text-blue-600 p-3 rounded-full shadow-lg animate-pulse">
-                <TrendingUp className="w-6 h-6" />
+              <div className="hidden lg:block absolute -bottom-6 -left-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-4 rounded-full shadow-2xl animate-pulse">
+                <TrendingUp className="w-7 h-7" />
+              </div>
+
+              {/* Ranking Up Animation - Hidden on mobile */}
+              <div className="hidden lg:block absolute top-1/2 -right-12 bg-yellow-400 text-black px-3 py-2 rounded-lg shadow-lg animate-bounce">
+                <div className="text-xs font-bold">📈 RANKING UP!</div>
               </div>
             </div>
           </div>
 
-          {/* Testimonials Below Hero */}
-          <div className="mt-16 pt-8 border-t border-white/20">
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Sarah L.",
-                  role: "Cafe Owner",
-                  quote: "Our traffic 10x'd in 60 days!",
-                  avatar: "SL",
-                },
-                {
-                  name: "Mike R.",
-                  role: "HVAC Business",
-                  quote: "Best investment we ever made!",
-                  avatar: "MR",
-                },
-                {
-                  name: "Jennifer C.",
-                  role: "Dental Practice",
-                  quote: "Leads are pouring in daily now!",
-                  avatar: "JC",
-                },
-              ].map((testimonial, index) => (
-                <div key={index} className="flex items-center gap-4 text-white">
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
-                    <span className="text-white font-semibold text-sm">{testimonial.avatar}</span>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-1 mb-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-sm text-blue-100 italic">"{testimonial.quote}"</p>
-                    <p className="text-xs text-white/80 mt-1">
-                      {testimonial.name}, {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -394,11 +423,11 @@ export default function LeadRankedLanding() {
                   <span className="text-2xl">🚀</span>
                   <span className="text-blue-800 font-bold">Lightning-Fast Websites</span>
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-tight">
                   Your Dream Website,<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">Ready in 7 Days</span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-base lg:text-xl text-gray-600 leading-relaxed">
                   Get a lightning-fast, SEO-optimized website that ranks on Google from day one. Built specifically for local businesses who want to dominate their competition!
                 </p>
               </div>
@@ -583,11 +612,11 @@ export default function LeadRankedLanding() {
               <span className="text-2xl">⚡️</span>
               <span className="text-indigo-800 font-bold">Everything You Need</span>
             </div>
-            <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
               Complete Digital Domination,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">All Under One Roof</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               From blazing-fast websites to premium link building—we've got everything you need to crush your competition and dominate your market!
             </p>
           </div>
@@ -726,11 +755,11 @@ export default function LeadRankedLanding() {
               <span className="text-2xl">🏆</span>
               <span className="text-green-800 font-bold">Success Spotlight</span>
             </div>
-            <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
               From Invisible to Unstoppable,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Page 3 to #1 in 60 Days!</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
               Watch how we transformed Chicago Roofing Pros from Google's graveyard to the top spot—and how we can do the same for you!
             </p>
           </div>
@@ -962,11 +991,11 @@ export default function LeadRankedLanding() {
               <span className="text-2xl">🌈</span>
               <span className="text-purple-800 font-bold">Loved by Local Businesses</span>
             </div>
-            <h2 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
               Real People, Real Results,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Real Happy</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Don't just take our word for it—hear from the amazing businesses we've helped dominate Google!
             </p>
           </div>
@@ -979,8 +1008,8 @@ export default function LeadRankedLanding() {
       <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-teal-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Ready to Rank #1?</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+            <h2 className="text-2xl lg:text-4xl font-bold text-white mb-4">Ready to Rank #1?</h2>
+            <p className="text-base lg:text-xl text-blue-100 max-w-3xl mx-auto mb-8">
               Get your free SEO audit and discover how we can help you dominate Google search results.
             </p>
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
