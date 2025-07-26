@@ -797,231 +797,270 @@ export default function LeadRankedLanding() {
       </section>
 
       {/* Case Studies Section - Interactive Google Spotlight */}
+      {/* Success Spotlight - Bold Case Study Block */}
       <section
         id="case-studies"
-        className="py-20 bg-gradient-to-br from-white via-blue-50 to-indigo-50 relative overflow-hidden"
+        className="py-16 bg-gradient-to-br from-indigo-600 via-blue-600 to-teal-600 relative overflow-hidden"
       >
-        {/* Background Effects */}
+        {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-indigo-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          {/* Gradient overlays for depth */}
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/20 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-l from-teal-600/20 to-transparent"></div>
+          
+          {/* Abstract floating shapes */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/3 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400/10 rounded-full blur-3xl"></div>
+          
+          {/* Corner accent shapes */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-white/10 to-transparent rounded-full -translate-y-32 translate-x-32"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-white/10 to-transparent rounded-full translate-y-24 -translate-x-24"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-full border border-white/50 shadow-lg mb-6">
-              <span className="text-2xl">🏆</span>
-              <span className="text-green-800 font-bold">Success Spotlight</span>
+        {/* Floating Success Badge */}
+        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-3 rounded-full shadow-2xl animate-bounce">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🚀</span>
+              <span className="font-black text-sm">SUCCESS SPOTLIGHT</span>
             </div>
-            <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              From Invisible to Unstoppable,<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">Page 3 to #1 in 60 Days!</span>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12">
+          {/* Compact Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-5xl font-black text-white mb-4 leading-tight">
+              From Invisible to Unstoppable
             </h2>
-            <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Watch how we transformed Chicago Roofing Pros from Google&apos;s graveyard to the top spot—and how we can do the same for you!
+            <p className="text-lg text-blue-100 font-medium">
+              Ranked #1 in Just 60 Days
             </p>
           </div>
 
-          {/* Google SERP Preview */}
-          <div className="mb-12">
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 max-w-4xl mx-auto">
-              {/* Search Bar */}
-              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-full mb-6 border">
-                <Search className="w-5 h-5 text-gray-400" />
-                <span className="text-gray-700 flex-1">Roofing Company in Chicago</span>
-                <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Search className="w-4 h-4 text-white" />
+          {/* 2-Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            
+            {/* Left Column - Enhanced Google Listing Mockup */}
+            <div className="space-y-6">
+              {/* Authentic Google Search Interface */}
+              <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 transform hover:scale-[1.02] transition-all duration-300">
+                {/* Realistic Google Search Bar */}
+                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-full mb-6 border-2 border-gray-200 shadow-inner">
+                  <div className="flex items-center gap-2 min-w-0 flex-1">
+                    <div className="w-6 h-6 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-full flex items-center justify-center">
+                      <Search className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-gray-800 font-medium text-sm truncate">roofing company chicago</span>
+                  </div>
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                    <Search className="w-4 h-4 text-white" />
+                  </div>
                 </div>
-              </div>
 
-              {/* Search Results */}
-              <div className="space-y-4">
-                {/* #1 Result - Chicago Roofing Pros */}
-                <div className="p-5 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 shadow-lg">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
+                {/* Search Results with Animation */}
+                <div className="space-y-3">
+                  {/* #1 Result - Highlighted with Slide-in Animation */}
+                  <div className="relative p-5 rounded-xl bg-gradient-to-r from-green-50 via-blue-50 to-teal-50 border-2 border-green-300 shadow-xl hover:shadow-2xl transition-all duration-500 group animate-slide-in-left">
+                    {/* Animated Ranking Badge */}
+                    <div className="absolute -top-3 -left-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-black px-4 py-2 rounded-full shadow-lg animate-pulse">
+                      🏆 #1
+                    </div>
+
+                    {/* Ranking Up Indicator */}
+                    <div className="absolute -top-3 -right-3 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+                      <span>📈</span>
+                      <span>RANKING UP!</span>
+                    </div>
+
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h3 className="font-bold text-blue-900 text-lg">Chicago Roofing Pros</h3>
+                          <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-full">
+                            <TrendingUp className="w-3 h-3 text-green-600" />
+                            <span className="text-xs font-bold text-green-700">OPTIMIZED</span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            ))}
+                          </div>
+                          <span className="text-sm font-bold text-gray-800">4.9 (347 reviews)</span>
+                        </div>
+
+                        <div className="flex items-center gap-4 text-sm text-gray-700 mb-3">
+                          <div className="flex items-center gap-1 hover:text-red-600 transition-colors cursor-pointer">
+                            <MapPin className="w-4 h-4 text-red-500" />
+                            <span className="font-medium">Chicago, IL</span>
+                          </div>
+                          <div className="flex items-center gap-1 hover:text-green-600 transition-colors cursor-pointer">
+                            <Phone className="w-4 h-4 text-green-600" />
+                            <span className="font-medium">(312) 555-ROOF</span>
+                          </div>
+                        </div>
+
+                        <div className="text-blue-600 font-semibold text-sm mb-2 hover:underline cursor-pointer">
+                          chicagoroofingpros.com
+                        </div>
+                        <div className="text-gray-600 text-xs">
+                          Professional roofing services • Licensed & Insured • 24/7 Emergency Repairs
+                        </div>
+                      </div>
+
+                      {/* Enhanced Mini Map */}
+                      <div className="w-20 h-16 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg border-2 border-gray-200 flex items-center justify-center shadow-lg">
+                        <div className="relative">
+                          <div className="w-3 h-3 bg-red-500 rounded-full shadow-lg"></div>
+                          <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-600 rounded-full animate-ping"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Competitors - Faded */}
+                  {[
+                    { name: "Windy City Roofing", rating: "4.1", reviews: "67", position: 2 },
+                    { name: "Chicago Roof Masters", rating: "3.9", reviews: "94", position: 3 },
+                  ].map((competitor, index) => (
+                    <div key={index} className="p-4 rounded-lg bg-gray-50 border border-gray-200 opacity-50">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">#1</span>
-                        <h3 className="font-bold text-green-900 text-lg">Chicago Roofing Pros</h3>
-                        <TrendingUp className="w-5 h-5 text-green-600" />
+                        <span className="bg-gray-400 text-white text-xs font-bold px-2 py-1 rounded">#{competitor.position}</span>
+                        <h3 className="font-medium text-gray-700 text-sm">{competitor.name}</h3>
                       </div>
-                      <div className="flex items-center gap-2 mb-3">
+                      <div className="flex items-center gap-2 mb-1">
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            <Star
+                              key={i}
+                              className={`w-3 h-3 ${i < Math.floor(Number.parseFloat(competitor.rating))
+                                ? "fill-yellow-400 text-yellow-400"
+                                : "fill-gray-200 text-gray-200"
+                                }`}
+                            />
                           ))}
                         </div>
-                        <span className="text-sm font-semibold text-gray-900">4.9 (128 reviews)</span>
+                        <span className="text-xs text-gray-600">
+                          {competitor.rating} ({competitor.reviews} reviews)
+                        </span>
                       </div>
-                      <div className="flex items-center gap-6 text-sm text-gray-700 mb-2">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4 text-red-500" />
-                          <span>Chicago, IL</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Phone className="w-4 h-4 text-blue-600" />
-                          <span>(312) 555-ROOF</span>
-                        </div>
-                      </div>
-                      <div className="text-sm text-blue-600 font-medium">chicagoroofpros.com</div>
+                      <div className="text-xs text-gray-500">Standard listing • Limited visibility</div>
                     </div>
-                    {/* Mini Map */}
-                    <div className="w-24 h-20 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg border border-gray-200 flex items-center justify-center ml-4">
-                      <div className="relative">
-                        <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-                        <div className="absolute -top-1 -left-1 w-3 h-3 bg-red-600 rounded-full animate-ping"></div>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
+              </div>
 
-                {/* Competitors */}
-                {[
-                  { name: "Windy City Roofing", rating: "4.1", reviews: "67" },
-                  { name: "Chicago Roof Masters", rating: "3.9", reviews: "94" },
-                ].map((competitor, index) => (
-                  <div key={index} className="p-4 rounded-lg bg-gray-50 border border-gray-200">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="bg-gray-400 text-white text-xs font-bold px-2 py-1 rounded">#{index + 2}</span>
-                      <h3 className="font-medium text-gray-700">{competitor.name}</h3>
-                    </div>
+              {/* Integrated Testimonial Card */}
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-sm">MR</span>
+                  </div>
+                  <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${i < Math.floor(Number.parseFloat(competitor.rating))
-                              ? "fill-yellow-400 text-yellow-400"
-                              : "fill-gray-200 text-gray-200"
-                              }`}
-                          />
-                        ))}
+                      <span className="font-bold text-white text-sm">Mike Rodriguez</span>
+                      <span className="text-blue-200 text-xs">• Owner</span>
+                    </div>
+                    <blockquote className="text-blue-100 text-sm italic leading-relaxed">
+                      "From page 3 to #1 in 60 days. Our phone hasn't stopped ringing!"
+                    </blockquote>
+                    <div className="flex items-center gap-1 mt-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Compact Stat Cards */}
+            <div className="space-y-6">
+              {/* 2x2 Grid of Stat Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { 
+                    icon: TrendingUp, 
+                    stat: "+410%", 
+                    label: "Website Traffic", 
+                    color: "from-blue-500 to-cyan-500",
+                    glow: "hover:shadow-blue-500/25"
+                  },
+                  { 
+                    icon: Target, 
+                    stat: "#1", 
+                    label: "Google Ranking", 
+                    color: "from-green-500 to-emerald-500",
+                    glow: "hover:shadow-green-500/25"
+                  },
+                  { 
+                    icon: Users, 
+                    stat: "+320%", 
+                    label: "Lead Forms", 
+                    color: "from-purple-500 to-pink-500",
+                    glow: "hover:shadow-purple-500/25"
+                  },
+                  { 
+                    icon: Star, 
+                    stat: "4.9⭐", 
+                    label: "GMB Rating", 
+                    color: "from-yellow-500 to-orange-500",
+                    glow: "hover:shadow-yellow-500/25"
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className={`group bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl ${item.glow} transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer`}
+                  >
+                    <div className="text-center">
+                      <div
+                        className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      >
+                        <item.icon className="w-6 h-6 text-white" />
                       </div>
-                      <span className="text-sm text-gray-600">
-                        {competitor.rating} ({competitor.reviews} reviews)
-                      </span>
+                      <div className="text-2xl font-black text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                        {item.stat}
+                      </div>
+                      <div className="text-xs text-gray-600 font-medium leading-tight">
+                        {item.label}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
 
-          {/* GMB-Style Profile Card */}
-          <div className="mb-12">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8 items-start">
-                {/* Left Side - Business Info */}
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-2xl flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">CR</span>
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900">Chicago Roofing Pros</h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                        <span className="text-gray-600 font-medium">4.9 (128 reviews)</span>
-                      </div>
-                    </div>
+              {/* Additional Impact Metrics */}
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl">
+                <h3 className="text-white font-bold text-lg mb-4 text-center">60-Day Transformation</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-blue-200 text-sm">Monthly Revenue</span>
+                    <span className="text-white font-bold">+285%</span>
                   </div>
-
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-2 text-green-600">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="font-medium">Open Now · 9AM–5PM</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <MapPin className="w-4 h-4" />
-                      <span>Downtown Chicago, IL</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <Phone className="w-4 h-4" />
-                      <span>(312) 555-ROOF</span>
-                    </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-blue-200 text-sm">Phone Calls</span>
+                    <span className="text-white font-bold">+450%</span>
                   </div>
-
-                  <div className="flex gap-3">
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white flex-1">
-                      <Globe className="w-4 h-4 mr-2" />
-                      Website
-                    </Button>
-                    <Button variant="outline" className="flex-1 bg-transparent">
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call
-                    </Button>
-                    <Button variant="outline" className="flex-1 bg-transparent">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Directions
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Right Side - Map Preview */}
-                <div className="bg-gradient-to-br from-green-100 via-blue-100 to-indigo-100 rounded-xl h-64 flex items-center justify-center border border-gray-200">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-red-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-gray-700 font-medium">Chicago Roofing Pros</p>
-                    <p className="text-sm text-gray-500">Downtown Chicago</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-blue-200 text-sm">Booking Rate</span>
+                    <span className="text-white font-bold">89%</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Animated Stats */}
-          <div className="mb-12">
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { icon: TrendingUp, stat: "+410%", label: "Website Traffic", color: "from-blue-500 to-cyan-500" },
-                { icon: Target, stat: "#1", label: "Google Maps Ranking", color: "from-green-500 to-emerald-500" },
-                { icon: Users, stat: "+320%", label: "Lead Form Submissions", color: "from-purple-500 to-pink-500" },
-                { icon: Star, stat: "4.9⭐", label: "Average GMB Rating", color: "from-yellow-500 to-orange-500" },
-              ].map((item, index) => (
-                <Card
-                  key={index}
-                  className="group hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              {/* CTA Button */}
+              <div className="text-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-black px-8 py-4 text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 rounded-xl"
                 >
-                  <CardContent className="p-6 text-center">
-                    <div
-                      className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      {item.icon && <item.icon className="w-8 h-8 text-white" />}
-                    </div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">{item.stat}</div>
-                    <div className="text-sm text-gray-600 font-medium">{item.label}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Customer Testimonial */}
-          <div className="text-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-xl max-w-3xl mx-auto">
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">MR</span>
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-gray-900">Mike Rodriguez</div>
-                  <div className="text-sm text-gray-600">Owner, Chicago Roofing Pros</div>
-                </div>
-              </div>
-              <blockquote className="text-xl text-gray-700 italic mb-4 leading-relaxed">
-                &quot;We were buried on page 3 before Lead Ranked stepped in. Now we&apos;re not just #1 on Google Maps – we&apos;re
-                booked solid for months! Our phone hasn&apos;t stopped ringing.&quot;
-              </blockquote>
-              <div className="flex items-center justify-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
+                  <Rocket className="w-5 h-5 mr-2" />
+                  Let's Get You Ranking Next
+                </Button>
               </div>
             </div>
           </div>

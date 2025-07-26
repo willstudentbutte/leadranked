@@ -151,6 +151,22 @@
   animation: float 6s ease-in-out infinite;
 }
 
+/* Slide-in animation for Google listing */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
 /* Glow effect for buttons */
 .hover\:glow:hover {
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(168, 85, 247, 0.3), 0 0 90px rgba(20, 184, 166, 0.2);
