@@ -3,7 +3,7 @@
 import React from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+
 import {
   Search,
   TrendingUp,
@@ -1126,7 +1126,7 @@ export default function LeadRankedLanding() {
                       ✅ Verified Customer
                     </div>
                     <blockquote className="text-blue-100 text-xs sm:text-sm italic leading-relaxed mb-2 sm:mb-3 font-medium">
-                      "From page 3 to #1 in 60 days. Our phone hasn't stopped ringing!"
+                      &quot;From page 3 to #1 in 60 days. Our phone hasn&apos;t stopped ringing!&quot;
                     </blockquote>
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1">
@@ -1168,7 +1168,7 @@ export default function LeadRankedLanding() {
 
                       {/* Button Text */}
                       <span className="font-bold tracking-wide text-center leading-tight">
-                        <span className="hidden sm:inline">Let's Rank Your Business Next</span>
+                        <span className="hidden sm:inline">Let&apos;s Rank Your Business Next</span>
                         <span className="sm:hidden">Rank Your Business</span>
                       </span>
 
