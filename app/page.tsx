@@ -616,145 +616,181 @@ export default function LeadRankedLanding() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Premium Services Section - Redesigned */}
       <section
         id="services"
         className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden"
       >
-        {/* Background Effects */}
+        {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-20 w-64 h-64 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-10 left-20 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-80 h-80 bg-indigo-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-violet-200/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header Section - Matching Website Builder Style */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-full border border-white/50 shadow-lg mb-6">
-              <span className="text-2xl">⚡️</span>
-              <span className="text-indigo-800 font-bold">Everything You Need</span>
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-teal-500 text-white px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <span className="text-2xl">⚡</span>
+                <span className="font-bold text-lg">Everything You Need</span>
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-tight">
+                Complete Digital Domination,<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">All Under One Roof</span>
+              </h2>
+              <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                From blazing-fast websites to premium link building—we&apos;ve got everything you need to crush your competition and dominate your market!
+              </p>
             </div>
-            <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              Complete Digital Domination,<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">All Under One Roof</span>
-            </h2>
-            <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              From blazing-fast websites to premium link building—we&apos;ve got everything you need to crush your competition and dominate your market!
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {/* 4-Column Premium Service Grid - All 8 Services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               {
                 icon: Globe,
                 title: "Custom Web Design",
-                hook: "Blazing-fast sites built to convert",
-                metric: "+150% time on site",
+                description: "Blazing-fast sites built to convert visitors into customers",
+                stats: ["+150% time on site", "4.9⭐ rating", "7-day delivery"],
                 color: "from-blue-500 to-cyan-500",
-                bgColor: "from-blue-50 to-cyan-50",
-              },
-              {
-                icon: Share2,
-                title: "Social Media Management",
-                hook: "Build loyal fans on every platform",
-                metric: "+12K followers in 90 days",
-                color: "from-purple-500 to-pink-500",
-                bgColor: "from-purple-50 to-pink-50",
+                accentColor: "blue",
               },
               {
                 icon: Search,
                 title: "Local SEO",
-                hook: "Rank top 3 in your city",
-                metric: "4.9 ⭐ avg GMB rating",
+                description: "Rank top 3 in your city and dominate local search results",
+                stats: ["4.9⭐ avg GMB", "Top 3 ranking", "+300% visibility"],
                 color: "from-green-500 to-emerald-500",
-                bgColor: "from-green-50 to-emerald-50",
+                accentColor: "green",
+              },
+              {
+                icon: Share2,
+                title: "Social Media",
+                description: "Build loyal fans and engage customers on every platform",
+                stats: ["+12K followers", "46% engagement", "Daily posting"],
+                color: "from-purple-500 to-pink-500",
+                accentColor: "purple",
               },
               {
                 icon: Shield,
                 title: "Reputation Management",
-                hook: "5-star reviews made effortless",
-                metric: "90% drop in negative feedback",
+                description: "5-star reviews made effortless with automated systems",
+                stats: ["90% drop negative", "24/7 monitoring", "Crisis response"],
                 color: "from-orange-500 to-red-500",
-                bgColor: "from-orange-50 to-red-50",
+                accentColor: "orange",
               },
               {
                 icon: Zap,
                 title: "Backlink Campaigns",
-                hook: "Boost authority with premium links",
-                metric: "DA 70+ placements",
+                description: "Boost domain authority with premium link placements",
+                stats: ["DA 70+ placements", "White-hat only", "Monthly reports"],
                 color: "from-yellow-500 to-orange-500",
-                bgColor: "from-yellow-50 to-orange-50",
+                accentColor: "yellow",
               },
               {
                 icon: Users,
                 title: "Lead Generation",
-                hook: "Turn clicks into real customers",
-                metric: "$8 avg cost per lead",
+                description: "Turn website clicks into real paying customers",
+                stats: ["$8 avg cost/lead", "3x conversion rate", "Qualified leads"],
                 color: "from-teal-500 to-blue-500",
-                bgColor: "from-teal-50 to-blue-50",
+                accentColor: "teal",
               },
               {
                 icon: Mail,
                 title: "Email Campaigns",
-                hook: "Nurture. Convert. Repeat.",
-                metric: "46% open rate",
+                description: "Nurture prospects and convert them into loyal customers",
+                stats: ["46% open rate", "12% click rate", "Automated flows"],
                 color: "from-indigo-500 to-purple-500",
-                bgColor: "from-indigo-50 to-purple-50",
+                accentColor: "indigo",
               },
               {
                 icon: MapPin,
                 title: "Google My Business",
-                hook: "Show up when it matters most",
-                metric: "+220% GMB calls",
+                description: "Show up when local customers search for your services",
+                stats: ["+220% GMB calls", "Map pack ranking", "Review automation"],
                 color: "from-rose-500 to-pink-500",
-                bgColor: "from-rose-50 to-pink-50",
+                accentColor: "rose",
               },
             ].map((service, index) => (
-              <Card
+              <div
                 key={index}
-                className="group bg-white/80 backdrop-blur-sm border-gray-200/50 hover:bg-white hover:border-gray-300 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10"
+                className="group relative bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-5 hover:bg-white hover:border-gray-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-500 cursor-pointer"
               >
-                <CardContent className="p-6 text-center">
-                  <div className="relative mb-6">
-                    <div
-                      className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl group-hover:shadow-blue-500/20 transition-all duration-500 group-hover:scale-110`}
-                    >
-                      {service.icon && <service.icon className="w-8 h-8 text-white group-hover:animate-pulse" />}
-                    </div>
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${service.bgColor} rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-sm`}
-                    ></div>
+                {/* Icon Corner Accent */}
+                <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${service.color} opacity-5 rounded-bl-2xl rounded-tr-2xl`}></div>
+                
+                {/* Icon Section */}
+                <div className="relative mb-4">
+                  <div
+                    className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
+                  >
+                    <service.icon className="w-7 h-7 text-white group-hover:animate-pulse" />
                   </div>
+                </div>
 
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">
+                {/* Content Section */}
+                <div className="space-y-3">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
                     {service.title}
                   </h3>
+                  
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                    {service.description}
+                  </p>
+                </div>
 
-                  <p className="text-gray-600 text-sm mb-3 leading-relaxed">{service.hook}</p>
+                {/* Stats Pills */}
+                <div className="flex flex-wrap gap-1.5 mt-4">
+                  {service.stats.map((stat, statIndex) => (
+                    <div
+                      key={statIndex}
+                      className={`inline-flex items-center gap-1 bg-gradient-to-r from-${service.accentColor}-50 to-${service.accentColor}-100 backdrop-blur-sm rounded-full px-2.5 py-1 border border-${service.accentColor}-200/50 group-hover:scale-105 transition-all duration-300`}
+                    >
+                      <div className={`w-1.5 h-1.5 bg-${service.accentColor}-500 rounded-full animate-pulse`}></div>
+                      <span className="text-xs font-semibold text-gray-700">{stat}</span>
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-50 to-indigo-50 backdrop-blur-sm rounded-full px-3 py-1 border border-blue-200/50">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs font-semibold text-gray-700">{service.metric}</span>
-                  </div>
-                </CardContent>
-              </Card>
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-xl max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Not sure where to start?</h3>
-              <p className="text-gray-600 mb-6">
-                Get a comprehensive audit of your digital presence and discover your biggest opportunities.
-              </p>
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Get a Free Audit
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
+          {/* Premium CTA Card - Wider & Shorter */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl p-6 shadow-2xl hover:shadow-3xl hover:scale-[1.02] transition-all duration-500 group overflow-hidden">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/5"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+              
+              <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
+                {/* Left Content */}
+                <div className="flex items-center gap-4 text-white">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Rocket className="w-8 h-8 text-white group-hover:animate-pulse" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl lg:text-2xl font-bold mb-1">Ready to Dominate Your Market?</h3>
+                    <p className="text-blue-100 text-sm lg:text-base">Get a comprehensive audit and discover your biggest opportunities</p>
+                  </div>
+                </div>
+
+                {/* Right CTA */}
+                <div className="flex-shrink-0">
+                  <Button
+                    size="lg"
+                    className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group-hover:animate-pulse"
+                  >
+                    Get Free Audit
+                    <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
