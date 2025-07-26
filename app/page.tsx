@@ -35,7 +35,7 @@ const testimonials = [
     name: "Sarah Johnson",
     title: "CEO, TechFlow Solutions",
     quote: "Lead Ranked helped us go from invisible to unmissable on Google. We&apos;re now the top tech company in San Jose!",
-    avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+    avatar: "https://ui-avatars.com/api/?name=Sarah+Johnson&size=128&background=3b82f6&color=fff&bold=true&format=png",
     bgColor: "bg-blue-50/50",
   },
   {
@@ -43,7 +43,7 @@ const testimonials = [
     name: "Mike Herrera",
     title: "Owner, Chicago Roof Co.",
     quote: "Our phone hasn&apos;t stopped ringing since working with Lead Ranked. We went from struggling to fully booked!",
-    avatar: "https://randomuser.me/api/portraits/men/15.jpg",
+    avatar: "https://ui-avatars.com/api/?name=Mike+Herrera&size=128&background=10b981&color=fff&bold=true&format=png",
     bgColor: "bg-green-50/50",
   },
   {
@@ -51,7 +51,7 @@ const testimonials = [
     name: "Jennifer Chen",
     title: "Bay Area Dental",
     quote: "We&apos;re booming with new patients! Lead Ranked made us the go-to dental practice in our area.",
-    avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+    avatar: "https://ui-avatars.com/api/?name=Jennifer+Chen&size=128&background=8b5cf6&color=fff&bold=true&format=png",
     bgColor: "bg-purple-50/50",
   },
   {
@@ -59,7 +59,7 @@ const testimonials = [
     name: "David Park",
     title: "Park&apos;s Auto Repair",
     quote: "From struggling to get noticed to being the #1 auto shop in town. These guys are absolute wizards!",
-    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+    avatar: "https://ui-avatars.com/api/?name=David+Park&size=128&background=f97316&color=fff&bold=true&format=png",
     bgColor: "bg-orange-50/50",
   },
   {
@@ -67,7 +67,7 @@ const testimonials = [
     name: "Lisa Thompson",
     title: "Thompson Law Firm",
     quote: "The quality of clients we&apos;re attracting now is incredible. Our practice has completely transformed!",
-    avatar: "https://randomuser.me/api/portraits/women/35.jpg",
+    avatar: "https://ui-avatars.com/api/?name=Lisa+Thompson&size=128&background=ec4899&color=fff&bold=true&format=png",
     bgColor: "bg-pink-50/50",
   },
   {
@@ -75,7 +75,7 @@ const testimonials = [
     name: "Carlos Martinez",
     title: "Martinez Restaurant",
     quote: "We&apos;re booked solid every weekend! Lead Ranked made us the most talked-about restaurant in town.",
-    avatar: "https://randomuser.me/api/portraits/men/41.jpg",
+    avatar: "https://ui-avatars.com/api/?name=Carlos+Martinez&size=128&background=14b8a6&color=fff&bold=true&format=png",
     bgColor: "bg-teal-50/50",
   },
 ]
@@ -123,7 +123,7 @@ function TestimonialCarousel() {
                     height={56}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      // Fallback to UI Avatars if randomuser.me fails
+                      // Fallback to generated avatar if image fails
                       const target = e.target as HTMLImageElement;
                       target.src = getImageUrl(testimonial.name);
                     }}
@@ -235,10 +235,10 @@ export default function LeadRankedLanding() {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
                     <div className="flex -space-x-2 lg:-space-x-3">
                       {[
-                        "https://randomuser.me/api/portraits/women/12.jpg",
-                        "https://randomuser.me/api/portraits/men/15.jpg",
-                        "https://randomuser.me/api/portraits/women/28.jpg",
-                        "https://randomuser.me/api/portraits/men/22.jpg"
+                        "https://ui-avatars.com/api/?name=Sarah+J&size=64&background=3b82f6&color=fff&bold=true&format=png",
+                        "https://ui-avatars.com/api/?name=Mike+H&size=64&background=10b981&color=fff&bold=true&format=png",
+                        "https://ui-avatars.com/api/?name=Jennifer+C&size=64&background=8b5cf6&color=fff&bold=true&format=png",
+                        "https://ui-avatars.com/api/?name=David+P&size=64&background=f97316&color=fff&bold=true&format=png"
                       ].map((avatar, index) => (
                         <div key={index} className="w-10 lg:w-12 h-10 lg:h-12 rounded-full border-2 lg:border-3 border-white shadow-lg overflow-hidden hover:scale-110 transition-transform duration-300">
                           <Image src={avatar} alt="Client" width={48} height={48} className="w-full h-full object-cover" />
