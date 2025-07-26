@@ -473,121 +473,153 @@ export default function LeadRankedLanding() {
 
             {/* Right Side - Interactive Website Preview */}
             <div className="relative">
-              {/* Floating Google SERP Preview */}
-              <div className="absolute -top-8 -left-4 z-20 bg-white rounded-lg shadow-xl p-4 border border-gray-200 max-w-sm animate-bounce">
-                <div className="flex items-center gap-2 mb-2">
-                  <Search className="w-4 h-4 text-gray-400" />
-                  <span className="text-sm text-gray-600">dentist near me</span>
-                </div>
-                <div className="space-y-1">
-                  <div className="text-blue-600 text-sm font-medium">Smile Dental Care</div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                    ))}
-                    <span className="text-xs text-gray-500">4.9 (89 reviews)</span>
-                  </div>
-                  <div className="text-xs text-gray-500">San Jose, CA • (408) 555-0123</div>
-                </div>
-              </div>
-
-              {/* Website Mockup */}
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-105 transition-transform duration-500">
+              {/* Realistic Website Mockup */}
+              <div className="bg-white rounded-3xl shadow-2xl ring-1 ring-gray-200 overflow-hidden transition-all duration-500 hover:shadow-3xl hover:ring-2 hover:ring-blue-200 group">
                 {/* Browser Header */}
-                <div className="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">
+                <div className="bg-gray-50 px-6 py-4 flex items-center gap-3 border-b border-gray-200">
                   <div className="flex gap-2">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                   </div>
-                  <div className="flex-1 bg-white rounded-md px-3 py-1 text-xs text-gray-600 ml-4">
-                    https://smiledentalcare.com
+                  <div className="flex-1 bg-white rounded-full px-4 py-2 text-sm text-gray-600 border border-gray-200 shadow-inner">
+                    🔒 https://smiledentalcare.com
                   </div>
                 </div>
 
                 {/* Website Content */}
-                <div className="p-6 space-y-6">
-                  {/* Header */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">SD</span>
-                      </div>
-                      <div>
-                        <div className="font-bold text-gray-900 text-sm">Smile Dental Care</div>
-                        <div className="text-xs text-gray-500">San Jose's Premier Dentist</div>
-                      </div>
+                <div className="bg-white">
+                  {/* Colorful Hero Header */}
+                  <div className="bg-gradient-to-r from-blue-500 via-teal-500 to-cyan-500 px-8 py-8 text-white relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="absolute top-4 right-8 w-16 h-16 bg-white rounded-full"></div>
+                      <div className="absolute bottom-6 left-12 w-8 h-8 bg-white rounded-full"></div>
+                      <div className="absolute top-12 left-20 w-4 h-4 bg-white rounded-full"></div>
                     </div>
-                    <Button size="sm" className="bg-blue-600 text-white text-xs px-3 py-1">
-                      Book Now
-                    </Button>
-                  </div>
 
-                  {/* Hero Section */}
-                  <div className="text-center space-y-3">
-                    <h1 className="text-lg font-bold text-gray-900">Your Perfect Smile Starts Here</h1>
-                    <p className="text-xs text-gray-600">Professional dental care in the heart of San Jose</p>
-                    <div className="flex items-center justify-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                      ))}
-                      <span className="text-xs text-gray-500 ml-1">4.9/5 (89 reviews)</span>
-                    </div>
-                  </div>
-
-                  {/* Services Grid */}
-                  <div className="grid grid-cols-3 gap-3">
-                    {[
-                      { name: "Cleanings", icon: "🦷" },
-                      { name: "Whitening", icon: "✨" },
-                      { name: "Implants", icon: "🔧" },
-                    ].map((service, index) => (
-                      <div
-                        key={index}
-                        className="group bg-gray-50 rounded-lg p-3 text-center hover:bg-blue-50 transition-colors cursor-pointer"
-                        title={`SEO optimized for "${service.name} San Jose"`}
-                      >
-                        <div className="text-lg mb-1">{service.icon}</div>
-                        <div className="text-xs font-medium text-gray-700 group-hover:text-blue-700">
-                          {service.name}
+                    {/* Header Content */}
+                    <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-white/30">
+                          <span className="text-white font-bold text-2xl">🦷</span>
+                        </div>
+                        <div>
+                          <h1 className="text-3xl font-bold">Smile Dental Care</h1>
+                          <p className="text-blue-100 text-lg">San Jose's Premier Dental Practice</p>
                         </div>
                       </div>
-                    ))}
+                      <Button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all self-start lg:self-center">
+                        📞 Book Now
+                      </Button>
+                    </div>
+
+                    {/* Hero Image Placeholder */}
+                    <div className="mt-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                      <div className="text-center space-y-3">
+                        <h2 className="text-2xl font-bold">Your Perfect Smile Starts Here</h2>
+                        <p className="text-blue-100 text-lg">Professional dental care with a personal touch</p>
+                        <div className="flex items-center justify-center gap-2 mt-4">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-yellow-300 text-yellow-300" />
+                          ))}
+                          <span className="text-white font-semibold ml-2">4.9/5 (89 reviews)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Services Section */}
+                  <div className="px-8 py-8 bg-gray-50">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Our Services</h3>
+                    <div className="grid grid-cols-3 gap-4">
+                      {[
+                        { name: "Cleanings", icon: "🦷", color: "from-green-400 to-emerald-500", bg: "bg-green-50", text: "text-green-700" },
+                        { name: "Whitening", icon: "✨", color: "from-yellow-400 to-orange-500", bg: "bg-yellow-50", text: "text-yellow-700" },
+                        { name: "Implants", icon: "🔧", color: "from-blue-400 to-indigo-500", bg: "bg-blue-50", text: "text-blue-700" },
+                      ].map((service, index) => (
+                        <div
+                          key={index}
+                          className={`group ${service.bg} rounded-2xl p-4 text-center hover:shadow-lg transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-white`}
+                        >
+                          <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:scale-110 transition-transform`}>
+                            <span className="text-white text-xl">{service.icon}</span>
+                          </div>
+                          <div className={`text-sm font-semibold ${service.text}`}>
+                            {service.name}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Testimonial Preview */}
+                  <div className="px-8 py-6 bg-white border-t border-gray-100">
+                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
+                          <Quote className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-gray-900">Sarah M.</div>
+                          <div className="flex items-center gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-gray-700 text-sm italic">"Amazing service! Dr. Smith made me feel comfortable and my teeth look incredible."</p>
+                    </div>
                   </div>
 
                   {/* Contact Section */}
-                  <div className="bg-blue-50 rounded-lg p-4 space-y-2">
-                    <div className="text-sm font-semibold text-blue-900">Contact Us Today</div>
-                    <div className="flex items-center gap-2 text-xs text-blue-700">
-                      <Phone className="w-3 h-3" />
-                      <span>(408) 555-0123</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-blue-700">
-                      <MapPin className="w-3 h-3" />
-                      <span>123 Main St, San Jose, CA</span>
+                  <div className="px-8 py-8 bg-gradient-to-r from-gray-50 to-blue-50">
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Contact Us Today</h3>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
+                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                            <Phone className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="text-sm text-gray-600">Call Us</div>
+                            <div className="font-semibold text-gray-900">(408) 555-0123</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-xl">
+                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                            <MapPin className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <div className="text-sm text-gray-600">Visit Us</div>
+                            <div className="font-semibold text-gray-900">123 Main St, San Jose</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Hover Tooltips */}
-                <div className="absolute top-20 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-black text-white text-xs px-2 py-1 rounded shadow-lg">Mobile Optimized</div>
+                <div className="absolute top-24 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black text-white text-xs px-3 py-2 rounded-lg shadow-lg">
+                    Mobile Optimized & SEO Ready
+                  </div>
                 </div>
               </div>
 
-              {/* Builder Tag */}
-              <div className="mt-6 text-center">
-                <Badge variant="outline" className="text-gray-600 border-gray-300 bg-white/80 backdrop-blur-sm">
-                  Generated with our custom website builder
-                </Badge>
+              {/* Enhanced Floating Elements - Hidden on mobile to prevent overflow */}
+              <div className="hidden lg:block absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-teal-500 text-white p-4 rounded-full shadow-2xl animate-bounce">
+                <Target className="w-6 h-6" />
+              </div>
+              <div className="hidden lg:block absolute -bottom-6 -left-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-4 rounded-full shadow-2xl animate-pulse">
+                <TrendingUp className="w-6 h-6" />
               </div>
 
-              {/* Floating Elements */}
-              <div className="absolute -bottom-4 -right-4 bg-green-500 text-white p-3 rounded-full shadow-lg animate-pulse">
-                <Zap className="w-5 h-5" />
-              </div>
-              <div className="absolute top-1/2 -left-6 bg-blue-500 text-white p-2 rounded-full shadow-lg">
-                <Search className="w-4 h-4" />
+              {/* Ranking Up Animation - Hidden on mobile */}
+              <div className="hidden lg:block absolute top-1/2 -right-12 bg-yellow-400 text-black px-4 py-2 rounded-xl shadow-lg animate-bounce">
+                <div className="text-sm font-bold">📈 RANKING UP!</div>
               </div>
             </div>
           </div>
