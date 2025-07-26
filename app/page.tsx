@@ -24,6 +24,7 @@ import {
   Quote,
   ExternalLink,
   CheckCircle,
+  Rocket,
 } from "lucide-react"
 
 const businesses = ["Local HVAC Company", "San Jose Restaurant", "Tech Startup", "Your Business"]
@@ -408,10 +409,16 @@ export default function LeadRankedLanding() {
 
       {/* Website Builder Section */}
       <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 relative overflow-hidden">
-        {/* Background Effects */}
+        {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 right-20 w-72 h-72 bg-blue-200/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-indigo-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-10 right-20 w-72 h-72 bg-gradient-to-r from-blue-200/20 to-purple-200/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-indigo-200/20 to-teal-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-pink-100/10 to-yellow-100/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          
+          {/* Floating abstract shapes */}
+          <div className="absolute top-32 left-1/4 w-16 h-16 bg-gradient-to-r from-blue-300/20 to-teal-300/20 rounded-2xl rotate-45 animate-float"></div>
+          <div className="absolute bottom-32 right-1/4 w-12 h-12 bg-gradient-to-r from-purple-300/20 to-pink-300/20 rounded-full animate-float delay-1000"></div>
+          <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-gradient-to-r from-yellow-300/20 to-orange-300/20 rounded-lg rotate-12 animate-float delay-2000"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -419,9 +426,9 @@ export default function LeadRankedLanding() {
             {/* Left Side - Pitch Content */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-6 py-3 rounded-full border border-white/50 shadow-lg">
-                  <span className="text-2xl">🚀</span>
-                  <span className="text-blue-800 font-bold">Lightning-Fast Websites</span>
+                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-teal-500 text-white px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  <span className="text-2xl">⚡</span>
+                  <span className="font-bold text-lg">Lightning-Fast Websites</span>
                 </div>
                 <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-tight">
                   Your Dream Website,<br />
@@ -432,194 +439,197 @@ export default function LeadRankedLanding() {
                 </p>
               </div>
 
-              {/* Benefits List */}
-              <div className="grid md:grid-cols-2 gap-4">
+              {/* Enhanced Benefits List */}
+              <div className="grid md:grid-cols-2 gap-6">
                 {[
-                  { icon: Search, text: "SEO Optimized Structure", desc: "Built for Google rankings" },
-                  { icon: Phone, text: "Mobile-First Design", desc: "Perfect on all devices" },
-                  { icon: Zap, text: "Lightning Fast Loading", desc: "Under 2 second load times" },
-                  { icon: MapPin, text: "GMB Compatible", desc: "Syncs with Google My Business" },
+                  { icon: Search, text: "SEO Optimized Structure", desc: "Built for Google rankings", color: "from-blue-500 to-blue-600" },
+                  { icon: Phone, text: "Mobile-First Design", desc: "Perfect on all devices", color: "from-green-500 to-green-600" },
+                  { icon: Zap, text: "Lightning Fast Loading", desc: "Under 2 second load times", color: "from-yellow-500 to-orange-500" },
+                  { icon: MapPin, text: "GMB Compatible", desc: "Syncs with Google My Business", color: "from-purple-500 to-purple-600" },
                 ].map((benefit, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50 hover:shadow-md transition-all duration-300"
+                    className="group flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 hover:shadow-xl hover:scale-105 transition-all duration-300 hover:bg-white/90"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <benefit.icon className="w-5 h-5 text-white" />
+                    <div className={`w-14 h-14 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                      <benefit.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm">{benefit.text}</div>
-                      <div className="text-xs text-gray-600">{benefit.desc}</div>
+                      <div className="font-bold text-gray-900 text-base mb-1">{benefit.text}</div>
+                      <div className="text-sm text-gray-600">{benefit.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold">
-                  Get My Website Now
-                  <ChevronRight className="ml-2 h-5 w-5" />
+              {/* High-Conversion SaaS CTA Button */}
+              <div className="space-y-4">
+                <Button size="lg" className="group relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-7 text-2xl font-black shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 rounded-xl border-0 hover:saas-glow">
+                  {/* Content */}
+                  <div className="flex items-center justify-center gap-4">
+                    <Rocket className="h-8 w-8 group-hover:animate-pulse transition-all duration-300" />
+                    <span className="tracking-normal font-black">Get My Website Now</span>
+                  </div>
+                  
+                  {/* Subtle highlight overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/5 to-white/10 rounded-xl pointer-events-none"></div>
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg bg-transparent"
-                >
-                  See Examples
-                </Button>
+                
+                {/* Trust Badge */}
+                <div className="flex items-center justify-center gap-2 text-gray-600">
+                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <span className="text-sm font-medium">Trusted by 500+ local businesses</span>
+                </div>
               </div>
             </div>
 
-            {/* Right Side - Interactive Website Preview */}
-            <div className="relative">
-              {/* Realistic Website Mockup */}
-              <div className="bg-white rounded-3xl shadow-2xl ring-1 ring-gray-200 overflow-hidden transition-all duration-500 hover:shadow-3xl hover:ring-2 hover:ring-blue-200 group">
-                {/* Browser Header */}
-                <div className="bg-gray-50 px-6 py-4 flex items-center gap-3 border-b border-gray-200">
+            {/* Right Side - Enhanced Website Preview */}
+            <div className="relative max-w-xl mx-auto lg:max-w-none">
+              {/* Premium Realistic Website Mockup */}
+              <div className="bg-white rounded-3xl shadow-2xl ring-1 ring-gray-200/50 overflow-hidden transition-all duration-500 hover:shadow-3xl hover:ring-2 hover:ring-blue-200/50 group w-full max-w-xl">
+                {/* Enhanced Browser Header */}
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 flex items-center gap-4 border-b border-gray-200/50">
                   <div className="flex gap-2">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <div className="w-3.5 h-3.5 bg-red-500 rounded-full shadow-sm"></div>
+                    <div className="w-3.5 h-3.5 bg-yellow-500 rounded-full shadow-sm"></div>
+                    <div className="w-3.5 h-3.5 bg-green-500 rounded-full shadow-sm"></div>
                   </div>
-                  <div className="flex-1 bg-white rounded-full px-4 py-2 text-sm text-gray-600 border border-gray-200 shadow-inner">
-                    🔒 https://smiledentalcare.com
+                  <div className="flex-1 bg-white rounded-lg px-4 py-2.5 text-sm text-gray-700 border border-gray-200 shadow-inner font-mono">
+                    🔒 https://eliteplumbingpros.com
                   </div>
                 </div>
 
-                {/* Website Content */}
-                <div className="bg-white">
-                  {/* Colorful Hero Header */}
-                  <div className="bg-gradient-to-r from-blue-500 via-teal-500 to-cyan-500 px-8 py-8 text-white relative overflow-hidden">
-                    {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute top-4 right-8 w-16 h-16 bg-white rounded-full"></div>
-                      <div className="absolute bottom-6 left-12 w-8 h-8 bg-white rounded-full"></div>
-                      <div className="absolute top-12 left-20 w-4 h-4 bg-white rounded-full"></div>
-                    </div>
-
-                    {/* Header Content */}
-                    <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                      <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-white/30">
-                          <span className="text-white font-bold text-2xl">🦷</span>
-                        </div>
-                        <div>
-                          <h1 className="text-3xl font-bold">Smile Dental Care</h1>
-                          <p className="text-blue-100 text-lg">San Jose's Premier Dental Practice</p>
-                        </div>
+                {/* Website Content - Professional Layout */}
+                <div className="bg-white font-sans">
+                  {/* Professional Navigation Bar */}
+                  <div className="bg-white px-8 py-5 border-b border-gray-100 flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="w-11 h-11 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <span className="text-white font-bold text-lg">🔧</span>
                       </div>
-                      <Button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all self-start lg:self-center">
-                        📞 Book Now
-                      </Button>
+                      <span className="font-bold text-gray-900 text-lg tracking-tight">Elite Plumbing Pros</span>
                     </div>
+                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg transition-all duration-200 hover:shadow-xl">
+                      Call Now
+                    </div>
+                  </div>
 
-                    {/* Hero Image Placeholder */}
-                    <div className="mt-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                      <div className="text-center space-y-3">
-                        <h2 className="text-2xl font-bold">Your Perfect Smile Starts Here</h2>
-                        <p className="text-blue-100 text-lg">Professional dental care with a personal touch</p>
-                        <div className="flex items-center justify-center gap-2 mt-4">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-yellow-300 text-yellow-300" />
-                          ))}
-                          <span className="text-white font-semibold ml-2">4.9/5 (89 reviews)</span>
-                        </div>
+                  {/* Hero Section with Background */}
+                  <div className="px-8 py-10 bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 text-white relative overflow-hidden">
+                    {/* Subtle background pattern */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent"></div>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12"></div>
+                    
+                    <div className="relative text-center space-y-5">
+                      <h1 className="text-2xl font-bold leading-tight tracking-tight">San Jose's #1 Plumbing Service</h1>
+                      <p className="text-blue-100 text-base font-medium">24/7 Emergency Repairs • Licensed & Insured</p>
+                      <div className="flex items-center justify-center gap-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300 drop-shadow-sm" />
+                        ))}
+                        <span className="text-white font-semibold text-base ml-2">4.9/5 (247 reviews)</span>
+                      </div>
+                      <div className="bg-white hover:bg-gray-50 text-blue-700 px-8 py-4 rounded-2xl font-bold text-base inline-block mt-6 shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105 cursor-pointer">
+                        📞 Get Free Quote Today
                       </div>
                     </div>
                   </div>
 
-                  {/* Services Section */}
-                  <div className="px-8 py-8 bg-gray-50">
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Our Services</h3>
-                    <div className="grid grid-cols-3 gap-4">
-                      {[
-                        { name: "Cleanings", icon: "🦷", color: "from-green-400 to-emerald-500", bg: "bg-green-50", text: "text-green-700" },
-                        { name: "Whitening", icon: "✨", color: "from-yellow-400 to-orange-500", bg: "bg-yellow-50", text: "text-yellow-700" },
-                        { name: "Implants", icon: "🔧", color: "from-blue-400 to-indigo-500", bg: "bg-blue-50", text: "text-blue-700" },
-                      ].map((service, index) => (
-                        <div
-                          key={index}
-                          className={`group ${service.bg} rounded-2xl p-4 text-center hover:shadow-lg transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-white`}
-                        >
-                          <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:scale-110 transition-transform`}>
-                            <span className="text-white text-xl">{service.icon}</span>
+                  {/* Services Grid with Background */}
+                  <div className="px-8 py-8 bg-gradient-to-br from-gray-50 to-blue-50/30 relative">
+                    {/* Background image placeholder */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-transparent"></div>
+                    <div className="relative">
+                      <h3 className="text-lg font-bold text-gray-900 text-center mb-6 tracking-tight">Our Expert Services</h3>
+                      <div className="grid grid-cols-3 gap-4">
+                        {[
+                          { name: "Emergency Repairs", icon: "🔧", color: "from-red-500 to-red-600" },
+                          { name: "New Installs", icon: "🚿", color: "from-blue-500 to-blue-600" },
+                          { name: "Drain Cleaning", icon: "🌊", color: "from-teal-500 to-teal-600" },
+                        ].map((service, index) => (
+                          <div key={index} className="bg-white rounded-2xl p-4 text-center shadow-lg border border-gray-100/50 hover:shadow-xl transition-all duration-200 hover:scale-105">
+                            <div className={`w-10 h-10 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg`}>
+                              <span className="text-white text-base">{service.icon}</span>
+                            </div>
+                            <div className="text-sm font-semibold text-gray-800 leading-tight">{service.name}</div>
                           </div>
-                          <div className={`text-sm font-semibold ${service.text}`}>
-                            {service.name}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Testimonial Preview */}
+                  {/* Professional Testimonial */}
                   <div className="px-8 py-6 bg-white border-t border-gray-100">
-                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
-                          <Quote className="w-6 h-6 text-white" />
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100/50 shadow-sm">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                          <span className="text-white text-lg font-semibold">M</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-2">
+                            <div className="text-base font-bold text-gray-900">Mike Rodriguez</div>
+                            <div className="flex items-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="text-sm text-gray-600 font-medium">Verified Customer • San Jose</div>
+                        </div>
+                      </div>
+                      <blockquote className="text-gray-800 font-medium leading-relaxed relative">
+                        <span className="text-2xl text-green-300 absolute -top-2 -left-1">"</span>
+                        <span className="relative">Fixed my emergency leak in 30 minutes! Professional, affordable, and they even cleaned up after. Highly recommend!</span>
+                        <span className="text-2xl text-green-300 absolute -bottom-4 -right-1">"</span>
+                      </blockquote>
+                    </div>
+                  </div>
+
+                  {/* Professional Contact Footer */}
+                  <div className="px-8 py-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                          <Phone className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="font-semibold text-gray-900">Sarah M.</div>
-                          <div className="flex items-center gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                            ))}
-                          </div>
+                          <div className="text-sm font-bold">(408) 555-PIPE</div>
+                          <div className="text-xs text-gray-300">24/7 Emergency</div>
                         </div>
                       </div>
-                      <p className="text-gray-700 text-sm italic">"Amazing service! Dr. Smith made me feel comfortable and my teeth look incredible."</p>
-                    </div>
-                  </div>
-
-                  {/* Contact Section */}
-                  <div className="px-8 py-8 bg-gradient-to-r from-gray-50 to-blue-50">
-                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Contact Us Today</h3>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="flex items-center gap-3 p-3 bg-green-50 rounded-xl">
-                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
-                            <Phone className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="text-sm text-gray-600">Call Us</div>
-                            <div className="font-semibold text-gray-900">(408) 555-0123</div>
-                          </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
+                          <MapPin className="w-4 h-4" />
                         </div>
-                        <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-xl">
-                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                            <MapPin className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="text-sm text-gray-600">Visit Us</div>
-                            <div className="font-semibold text-gray-900">123 Main St, San Jose</div>
-                          </div>
+                        <div>
+                          <div className="text-sm font-bold">San Jose, CA</div>
+                          <div className="text-xs text-gray-300">Licensed & Insured</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Hover Tooltips */}
-                <div className="absolute top-24 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-black text-white text-xs px-3 py-2 rounded-lg shadow-lg">
-                    Mobile Optimized & SEO Ready
+                {/* Hover Tooltip */}
+                <div className="absolute top-16 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
+                    Mobile-First & SEO Optimized
                   </div>
                 </div>
               </div>
 
-              {/* Enhanced Floating Elements - Hidden on mobile to prevent overflow */}
-              <div className="hidden lg:block absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-teal-500 text-white p-4 rounded-full shadow-2xl animate-bounce">
-                <Target className="w-6 h-6" />
+              {/* Floating Elements - Smaller and More Subtle */}
+              <div className="hidden lg:block absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-teal-500 text-white p-2 rounded-full shadow-xl animate-bounce">
+                <Target className="w-4 h-4" />
               </div>
-              <div className="hidden lg:block absolute -bottom-6 -left-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-4 rounded-full shadow-2xl animate-pulse">
-                <TrendingUp className="w-6 h-6" />
+              <div className="hidden lg:block absolute -bottom-4 -left-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-2 rounded-full shadow-xl animate-pulse">
+                <TrendingUp className="w-4 h-4" />
               </div>
 
-              {/* Ranking Up Animation - Hidden on mobile */}
-              <div className="hidden lg:block absolute top-1/2 -right-12 bg-yellow-400 text-black px-4 py-2 rounded-xl shadow-lg animate-bounce">
-                <div className="text-sm font-bold">📈 RANKING UP!</div>
+              {/* Success Badge */}
+              <div className="hidden lg:block absolute top-1/3 -right-8 bg-yellow-400 text-black px-3 py-1 rounded-lg shadow-lg animate-bounce">
+                <div className="text-xs font-bold">📈 #1 Ranked!</div>
               </div>
             </div>
           </div>
