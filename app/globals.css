@@ -119,6 +119,38 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Typography: ensure consistent heading sizes on mobile and scale up responsively */
+  h1 {
+    /* Bigger h1 on mobile and scales up */
+    font-size: clamp(2.5rem, 7.5vw, 3.25rem);
+    line-height: 1.12;
+    font-weight: 900;
+    letter-spacing: -0.012em;
+  }
+
+  h2 {
+    /* Make all h2s bigger on mobile (uniform), still below h1 */
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.008em;
+  }
+
+  /* Ensure nested spans within headings don't override size */
+  h1 span, h2 span {
+    font-size: inherit !important;
+    line-height: inherit;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: clamp(3rem, 4.5vw, 3.75rem);
+    }
+    h2 {
+      font-size: clamp(2.25rem, 3.5vw, 3rem);
+    }
+  }
 }
 
 /* Custom animations for testimonials */

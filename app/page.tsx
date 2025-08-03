@@ -84,24 +84,52 @@ const testimonials = [
 function TestimonialCarousel() {
   return (
     <div className="relative">
-      {/* Testimonials Grid - Equal Height Cards */}
-      <div className="grid md:grid-cols-3 gap-8">
+      {/* Decorative background orbs */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-8 -left-8 w-40 h-40 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div className="absolute -bottom-8 -right-12 w-56 h-56 rounded-full bg-purple-500/10 blur-3xl"></div>
+      </div>
+
+      {/* Section header */}
+      <div className="text-center mb-10">
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-teal-500 text-white px-5 py-2 rounded-full shadow-xl border border-white/30">
+          <Star className="w-4 h-4 fill-yellow-300 text-yellow-300" />
+          <span className="font-bold">What Clients Are Saying</span>
+        </div>
+        <h3 className="mt-4 font-black text-gray-900 leading-tight">
+          Proof You Can Feel<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Real Wins, Real Fast</span>
+        </h3>
+      </div>
+
+      {/* Testimonials Grid - Masonry-like responsive with equal height */}
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
         {testimonials.map((testimonial, index) => (
           <div
             key={testimonial.id}
             className="group opacity-0 animate-fade-in-up"
             style={{
-              animationDelay: `${index * 150}ms`
+              animationDelay: `${index * 120}ms`
             }}
           >
-            {/* Consistent Card Design with Subtle Color */}
-            <div className={`h-full ${testimonial.bgColor} backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-white/50 flex flex-col`}>
+            {/* Card */}
+            <div className={`relative h-full ${testimonial.bgColor} p-6 sm:p-7 rounded-2xl shadow-xl border border-white/50 backdrop-blur-md flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-3xl`}>
+              {/* Glow overlay */}
+              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute -inset-1 bg-gradient-to-br from-white/10 to-white/0 blur-lg"></div>
+              </div>
 
-              {/* Star Rating - Top */}
-              <div className="flex items-center justify-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
+              {/* Star Rating + Badge */}
+              <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center gap-1.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
+                  ))}
+                </div>
+                <div className="inline-flex items-center gap-2 text-xs font-bold px-2.5 py-1 rounded-full bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-700 border border-emerald-200">
+                  <TrendingUp className="w-3 h-3" />
+                  <span>RESULTS</span>
+                </div>
               </div>
 
               {/* Quote Text - Center Aligned */}
@@ -113,30 +141,42 @@ function TestimonialCarousel() {
                 </blockquote>
               </div>
 
-              {/* Profile - Bottom */}
-              <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                <div className="w-14 h-14 rounded-full overflow-hidden shadow-md border-2 border-white flex-shrink-0">
+              {/* Footer: Avatar + Meta */}
+              <div className="flex items-center gap-3 pt-5 border-t border-white/60">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg ring-2 ring-white/80 flex-shrink-0">
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    width={56}
-                    height={56}
+                    width={48}
+                    height={48}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      // Fallback to generated avatar if image fails
                       const target = e.target as HTMLImageElement;
                       target.src = getImageUrl(testimonial.name);
                     }}
                   />
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] font-black flex items-center justify-center ring-2 ring-white">✓</div>
                 </div>
-                <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-base">{testimonial.name}</div>
-                  <div className="text-gray-600 text-sm">{testimonial.title}</div>
+                <div className="min-w-0">
+                  <div className="font-bold text-gray-900 text-sm sm:text-base leading-tight truncate">{testimonial.name}</div>
+                  <div className="text-gray-600 text-xs sm:text-sm truncate">{testimonial.title}</div>
                 </div>
+                <div className="ml-auto text-xs text-gray-500 hidden sm:block">Verified</div>
               </div>
+
+              {/* Corner accent */}
+              <div className="pointer-events-none absolute -top-8 -right-8 w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-2xl"></div>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Bottom CTA inside carousel for conversion */}
+      <div className="mt-10 flex justify-center">
+        <Button className="group bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all">
+          See More Success Stories
+          <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-0.5 transition-transform" />
+        </Button>
       </div>
     </div>
   )
@@ -410,7 +450,7 @@ export default function LeadRankedLanding() {
                   <span className="text-lg sm:text-2xl">⚡</span>
                   <span className="font-bold text-sm sm:text-lg">Lightning-Fast Websites</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-gray-900 leading-tight">
+                <h2 className="font-black text-gray-900 leading-tight">
                   Your Dream Website,<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">Ready in 7 Days</span>
                 </h2>
@@ -638,7 +678,7 @@ export default function LeadRankedLanding() {
                 <span className="text-2xl">⚡</span>
                 <span className="font-bold text-lg">Everything You Need</span>
               </div>
-              <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-tight">
+              <h2 className="font-black text-gray-900 leading-tight">
                 Complete Digital Domination,<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">All Under One Roof</span>
               </h2>
@@ -845,7 +885,7 @@ export default function LeadRankedLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-8 sm:pt-12">
           {/* Mobile-Responsive Header */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-white mb-4 sm:mb-6 leading-tight tracking-tight">
+            <h2 className="font-black text-white mb-4 sm:mb-6 leading-tight tracking-tight">
               From Invisible to
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-teal-300 to-cyan-300 animate-pulse">
                 Unstoppable
@@ -1199,12 +1239,12 @@ export default function LeadRankedLanding() {
       </section>
 
       {/* Testimonials Section - Clean Modern SaaS Style */}
-      <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/40 relative overflow-hidden">
+      <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/40 to-indigo-50/50 relative overflow-hidden">
         {/* Radial Background Effects with Bouncing Emojis */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-400/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-400/10 rounded-full blur-3xl"></div>
 
           {/* Floating bouncing emojis */}
           <div className="absolute top-32 left-1/4 text-4xl opacity-20 animate-bounce">💬</div>
@@ -1236,7 +1276,7 @@ export default function LeadRankedLanding() {
       <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-teal-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl lg:text-4xl font-bold text-white mb-4">Ready to Rank #1?</h2>
+            <h2 className="font-bold text-white mb-4">Ready to Rank #1?</h2>
             <p className="text-base lg:text-xl text-blue-100 max-w-3xl mx-auto mb-8">
               Get your free SEO audit and discover how we can help you dominate Google search results.
             </p>
